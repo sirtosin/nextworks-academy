@@ -1,0 +1,17 @@
+<form action="/users/user/<%= _id %>" method="POST"><input type="hidden" name="_method" value="DELETE">
+    <% include ./partials/messages %>
+    <button type="submit" class="btn red right">Delete Account</button>
+</form>
+<% include ./partials/bg %>
+<h1 class="mt-4">NextWorks Limited Academy</h1>
+<h4>Welcome <%= name %></h4>
+
+<h5>Choose Your plan</h5>
+
+<p>Web developer</p>
+<p>UI/UX designer</p>
+<p>Solar Inverter installation</p>
+<p>CCTV installation</p>
+
+<a href="/users/logout" class="btn red">Logout</a>
+<a href="/users/edit" class="btn blue">edit details</a>

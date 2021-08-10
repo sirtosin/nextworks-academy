@@ -1,0 +1,24 @@
+<% include ./partials/bg %><a href="/" class=" orange-text right"><i class="material-icons right">home</i></a>
+<div class="row center">
+  <h2>Fill in your credentials</h2>
+  <% include ./partials/messages %>
+  <form action="/users/login" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">mail</i>
+        <input id="email" name="email" type="text" class="validate">
+        <label for="email"> email</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">lock</i>
+        <input id="password" name="password" type="password" class="validate">
+        <label for="password">password</label>
+      </div>
+    </div>
+    <button type="submit" class="btn blue ">Login</button>
+  </form>
+  <br>
+  <p>
+    No Account? <a href="/users/register">Register</a>
+  </p>
+</div>

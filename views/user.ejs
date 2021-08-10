@@ -1,0 +1,23 @@
+<% include ./partials/bg %><h3 class="center">Registered Users</h3>
+<table class="centered">
+    <thead class="blue lighten-2">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <% for(var i = 0; i < users.length; i++) { %>
+
+    <tbody class="green lighten-2">
+        <tr>
+            <td><%= users[i].name %></td>
+            <td><%= users[i].email %></td>
+            <td><%= i + 1 %></td>
+        </tr>
+
+    </tbody><% } %>
+</table>
+
+<a style="margin-top: 2em;" href="/" class="btn yellow darken-1 black-text">Back Home <i
+        class="material-icons right">home</i></a>

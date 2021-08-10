@@ -1,0 +1,30 @@
+<div class="row center">
+    <h2>Update your details</h2>
+    <% include ./partials/messages %>
+    <form action="/users/user/<%= _id %>" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name" type="text" value="<%= name %>" name="name" class="validate">
+                <label for="name"> name</label>
+            </div>
+            <input type="hidden" value="<%= _id %>">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">mail</i>
+                <input id="email" name="email" type="text" value="<%= email %>" class="validate">
+                <label for="email"> email</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input id="password" type="password" value="<%= password %>" name="password" class="validate">
+                <label for="password">password</label>
+            </div>
+
+        </div>
+        <button type="submit" class="btn green ">Save</button>
+    </form>
+    <b class="right">
+        go back << <a href="/dashboard" class="btn red">Cancel</a>
+    </b>
+</div>

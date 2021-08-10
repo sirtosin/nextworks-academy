@@ -1,0 +1,43 @@
+<% if(typeof errors != "undefined")
+{ %> <% errors.forEach(function(error) { %>
+<div style=" border-radius: 1.3rem;" class="yellow card">
+  <%= error.msg %>
+  <button type="button" style="cursor: pointer; border: none;
+  border-radius: 1.3rem; margin-right: .01em; margin-top: .1em;" class="red  white-text right" onclick="
+    parentElement.remove()">&times;
+  </button>
+</div>
+<% }); %> <% } %>
+
+<% if(success_msg != ''){ %>
+<div style=" border-radius: 1.3rem;" class="yellow card">
+  <%= success_msg %>
+
+  <button type="button" style="cursor: pointer; border: none;
+  border-radius: 1.3rem; margin-right: .01em; margin-top: .1em;" class="red  white-text right" onclick="
+    parentElement.remove()">&times;
+  </button>
+</div>
+<% } %>
+
+<% if(error_msg != ''){ %>
+<div style=" border-radius: 1.3rem;" class="yellow card">
+  <%= error_msg %>
+
+  <button type="button" style="cursor: pointer; border: none;
+  border-radius: 1.3rem; margin-right: .01em; margin-top: .1em;" class="red  white-text right" onclick="
+    parentElement.remove()">&times;
+  </button>
+</div>
+<% } %>
+
+<% if(error != ''){ %>
+<div style=" border-radius: 1.3rem;" class="yellow card">
+  <%= error %>
+
+  <button type="button" style="cursor: pointer; border: none;
+  border-radius: 1.3rem; margin-right: .01em; margin-top: .1em;" class="red  white-text right" onclick="
+    parentElement.remove()">&times;
+  </button>
+</div>
+<% } %>

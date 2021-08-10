@@ -1,0 +1,37 @@
+<% include ./partials/bg %><a href="/" class="orange-text right"><i class="material-icons right">home</i></a>
+<div class="row center">
+  <h2>Fill in your credentials</h2>
+  <% include ./partials/messages %>
+  <form action="/users/register" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="name" name="name" type="text" value="<%= typeof name != 'undefined' ? name : '' %>" class="validate">
+        <label for="name"> name</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">mail</i>
+        <input id="email" name="email" type="text" value="<%= typeof email != 'undefined' ? email : '' %>"
+          class="validate">
+        <label for="email"> email</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">lock</i>
+        <input id="password" value="<%= typeof password != 'undefined' ? password : '' %>" name="password"
+          type="password" class="validate">
+        <label for="password">password</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">lock</i>
+        <input id="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" name="password2"
+          type="password" class="validate">
+        <label for="password2"> Confirm Password</label>
+      </div>
+
+    </div>
+    <button type="submit" class="btn green ">Register</button>
+  </form>
+  <p>
+    Have an Account? <a href="/users/login">Login</a>
+  </p>
+</div>
