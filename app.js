@@ -1,25 +1,25 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const passport = require("passport");
 var methodOverride = require("method-override");
 
-const flash = require("connect-flash");
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
+const connectDB = require("./config/db");
 
 const app = express();
+
+// Load config
+dotenv.config({ path: "./config/config.env" });
 
 // Passport Config
 require("./config/passport")(passport);
 
-// DB Config
-const db = require("./config/keys").mongoURI;
-
 // Connect to MongoDB
-mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+connectDB();
 
 app.use(express.static("public"));
 
@@ -43,11 +43,14 @@ app.use(
 );
 
 // Express session
+
+// Sessions
 app.use(
   session({
-    secret: "secret",
-    resave: true,
-    saveUninitialized: true,
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 );
 
@@ -70,4 +73,9 @@ app.use(function (req, res, next) {
 app.use("/", require("./routes/index.js"));
 app.use("/users", require("./routes/users.js"));
 
-app.listen(5000, console.log(`Server running on  5000`));
+const PORT = process.env.PORT || 5000;
+
+app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+);

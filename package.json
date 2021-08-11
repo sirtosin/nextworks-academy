@@ -4,7 +4,8 @@
   "description": "Node.js authentication with Passport",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +14,9 @@
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
     "debug": "^2.6.9",
+    "dotenv": "^8.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
@@ -23,5 +26,9 @@
     "nodemon": "^2.0.12",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4"
   }
 }
