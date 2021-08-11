@@ -17,7 +17,7 @@ router.get("/dashboard", ensureAuthenticated, (req, res) =>
 router.get("/users", (req, res) => {
   //get users available
   axios
-    .get("http://localhost:5000/users/user")
+    .get("http://127.0.0.1:5000/users/user")
     .then((response) => {
       console.log(response);
       res.render("user", {
@@ -31,7 +31,7 @@ router.get("/users", (req, res) => {
 
 //update  user
 router.get("/users/edit/", ensureAuthenticated, (req, res) => {
-  axios.get("http://localhost:5000/users/user/");
+  axios.get("http://127.0.0.1:5000/users/user/");
   res.render("edit", {
     name: req.user.name,
     email: req.user.email,
