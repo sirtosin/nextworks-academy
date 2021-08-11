@@ -70,6 +70,4 @@ app.use(function (req, res, next) {
 app.use("/", require("./routes/index.js"));
 app.use("/users", require("./routes/users.js"));
 
-const PORT = 5000;
-
-app.listen(PORT, console.log(`Server running on  ${PORT}`));
+app.listen(5000, console.log(`Server running on  5000`));

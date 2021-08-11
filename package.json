@@ -4,8 +4,7 @@
   "description": "Node.js authentication with Passport",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "dev": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +23,5 @@
     "nodemon": "^2.0.12",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
   }
 }
