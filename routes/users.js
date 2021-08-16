@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
   //add back the extension
   filename: function (request, file, callback) {
-    callback(null, Date.now() + file.originalname);
+    callback(null, file.originalname);
   },
 });
 
@@ -36,9 +36,10 @@ router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
 router.get("/register", (req, res) => res.render("register"));
 
 // Register
-router.post("/register", (req, res) => {
+router.post("/register", upload.single("image"), (req, res) => {
   const { name, email, password, password2 } = req.body;
   const image = req.file.filename;
+  console.log(image);
   let errors = [];
 
   if (!name || !email || !password || !password2) {

@@ -8,11 +8,15 @@ router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
 
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
-  res.render("dashboard", {
-    name: req.user.name,
-    image: req.user.image,
-    _id: req.user._id,
-  })
+  res.render(
+    "dashboard",
+    {
+      name: req.user.name,
+      image: req.user.image,
+      _id: req.user._id,
+    },
+    console.log(req.user.image)
+  )
 );
 //registered users
 router.get("/users", (req, res) => {
