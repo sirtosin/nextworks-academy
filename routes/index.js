@@ -10,6 +10,7 @@ router.get("/", forwardAuthenticated, (req, res) => res.render("welcome"));
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
     name: req.user.name,
+    image: req.user.image,
     _id: req.user._id,
   })
 );

@@ -2,12 +2,16 @@
 <div class="row center">
   <h2>Fill in your credentials</h2>
   <% include ./partials/messages %>
-  <form action="/users/register" method="POST" class="col s12">
+  <form action="/users/register" method="POST" enctype="multipart/form-data" class="col s12">
     <div class="row">
       <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <input id="name" name="name" type="text" value="<%= typeof name != 'undefined' ? name : '' %>" class="validate">
         <label for="name"> name</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="image" name="image" type="file">
+        <label for="image">profile picture</label>
       </div>
       <div class="input-field col s12">
         <i class="material-icons prefix">mail</i>
