@@ -60,6 +60,7 @@ router.post("/register", (req, res) => {
       email,
       password,
       password2,
+      image,
     });
   } else {
     User.findOne({ email: email }).then((user) => {
@@ -72,12 +73,14 @@ router.post("/register", (req, res) => {
           email,
           password,
           password2,
+          image,
         });
       } else {
         const newUser = new User({
           name,
           email,
           password,
+          image,
         });
 
         //hash password
