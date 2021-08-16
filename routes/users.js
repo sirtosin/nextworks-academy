@@ -5,8 +5,7 @@ const passport = require("passport");
 // Load User model
 const User = require("../models/User");
 const multer = require("multer");
-const { forwardAuthenticated } = require("../config/auth");]
-
+const { forwardAuthenticated } = require("../config/auth");
 
 //define storage for the images
 
